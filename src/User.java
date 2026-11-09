@@ -1,53 +1,48 @@
 public class User
 {
-  public int c_id;
-  public String c_name;
+  public int client_id;
+  public String client_name;
   public String address;
 
-  public User(String name, int i)
+  public User(String name, int id)
   {
-    c_id = i;
-    if (name.length() > 100) // Testing length is
+    client_id = id;
+    if (name.length() > 100) // Testing length is below 100
     {
-      return; //If string is invalid, we dont try to store it
+      return; //If string is invalid, return nothing
     }
-    c_name = name;
+    client_name = name;
   }
 
-  public void setC_name(String n)
+  public void setClient_name(String name)
   {
-    if (n.length() < 0)
+    if (name.isEmpty())
     {
-      return; //If string is invalid, we dont try to store it
+      return; //If string is invalid, return nothing
     }
-    c_name = n;
+    client_name = name;
   }
 
-  public void setA(String a)
+  public int getId()
   {
-    a = a;
+    return client_id;
   }
 
-  public int geti()
+  public String getName()
   {
-    return c_id;
+    return client_name;
   }
 
-  public String getn()
-  {
-    return c_name;
-  }
-
-  public String geta()
+  public String getAddress()
   {
     return "STREETNAME";
   }
 
   @Override public boolean equals(Object o)
   {
-    if (o instanceof User u)
+    if (o instanceof User user)
     {
-      return u.c_name == c_name;
+      return user.client_name == client_name;
     }
     return false;
   }

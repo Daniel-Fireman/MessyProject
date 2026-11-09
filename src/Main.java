@@ -13,8 +13,8 @@ public class Main
     usersList.add(user2);
     usersList.add(user3);
 
-    System.out.println(usersList.getu());
+    System.out.println(usersList.getUser());
 
-    Persister.save(usersList.getu());
+    Persister.save(usersList.getUser());
   }
 }
