@@ -1,18 +1,20 @@
+import java.io.IOException;
+
 public class Main
 {
-    public static void main(String[] args)
-    {
-        User u1 = new User("Bob", 10);
-        User u2 = new User("Alice", 20);
-        User u3 = new User("Carl", 30);
+  public static void main(String[] args) throws IOException
+  {
+    User user1 = new User("Bob", 10);
+    User user2 = new User("Alice", 20);
+    User user3 = new User("Carl", 30);
 
-        UserList list = new UserList();
-        list.add(u1);
-        list.add(u2);
-        list.add(u3);
+    UserList usersList = new UserList();
+    usersList.add(user1);
+    usersList.add(user2);
+    usersList.add(user3);
 
-        System.out.println(list.getu(new User("Bob", 11)));
+    System.out.println(usersList.getu());
 
-        Persister.s(list);
-    }
+    Persister.save(usersList.getu());
+  }
 }
