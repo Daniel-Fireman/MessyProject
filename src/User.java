@@ -35,7 +35,7 @@ public class User
 
   public String getAddress()
   {
-    return "STREETNAME";
+    return address;
   }
 
   @Override public boolean equals(Object o)
